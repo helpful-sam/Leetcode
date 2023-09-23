@@ -8,7 +8,7 @@ A word chain is a sequence of words [word1, word2, ..., wordk] with k >= 1, wher
 
 Return the length of the longest possible word chain with words chosen from the given list of words.
 
- 
+
 
 Example 1:
 
