@@ -8,9 +8,8 @@ class Solution(object):
         ### PSEUDO CODE ###
         
         # 1. Order strings from shortest to longest
-        # 2. Create an array of ordered pairs (tuples) with the format of (string length, highest index of this-length string)
-        # 3. For each strings from 0 to "shortest_upper_index", calculate chain length
-        # 4. Return longest chain
+        # 2. For each strings from 0 to "shortest_upper_index", calculate chain length
+        # 3. Return longest chain
 
 
         ### ACTUAL CODE ###
@@ -19,17 +18,7 @@ class Solution(object):
 
         sorted_words = sorted(words, key=len)
 
-        # 2. indexing #
-
-        categories = {key: 0 for key in range(1,17)}
-
-        for index in range(len(words)):
-            word_length = len(words[index])
-            
-            if word_length in categories:
-                categories[word_length] += 1
-
-        # 3. chain length calculation #
+        # 2. chain length calculation #
 
         # dictionary to store length information
         chain_lengths = {}
@@ -55,5 +44,5 @@ class Solution(object):
         for word in sorted_words:
             max_chain_length = max(max_chain_length, calculate_chain_length(word))
 
-        # 4. return longest chain length #
+        # 3. return longest chain length #
         return max_chain_length
